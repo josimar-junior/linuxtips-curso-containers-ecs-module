@@ -24,7 +24,18 @@ variable "service_memory" {}
 variable "service_listener" {}
 variable "service_task_execution_role" {}
 variable "environment_variables" {
-  type = list(any)
+  type = list(object({
+    name : string,
+    value : string
+  }))
+  description = "A list of the environment variables that will be passed to the service"
+}
+variable "secrets" {
+  type = list(object({
+    name : string,
+    valueFrom : string
+  }))
+  description = "A list of secrets from the Parameter Store or Secret Manager"
 }
 variable "capabilities" {
   type = list(any)
