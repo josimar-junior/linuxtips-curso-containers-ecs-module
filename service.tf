@@ -14,11 +14,6 @@ resource "aws_ecs_service" "main" {
     }
   }
 
-  service_registries {
-    registry_arn   = var.service_discovery_namespace != null ? aws_service_discovery_service.main[0].arn : null
-    container_name = var.service_name != null ? var.service_name : null
-  }
-
   deployment_maximum_percent         = 200
   deployment_minimum_healthy_percent = 100
 
