@@ -21,7 +21,10 @@ variable "private_subnets" {}
 variable "service_port" {}
 variable "service_cpu" {}
 variable "service_memory" {}
-variable "service_listener" {}
+variable "service_listener" {
+  type    = string
+  default = null
+}
 variable "service_task_execution_role" {}
 variable "environment_variables" {
   type = list(object({
@@ -138,4 +141,35 @@ variable "efs_volumes" {
 variable "service_discovery_namespace" {
   default     = null
   description = "The Namespace ID of the Service Discovery"
+}
+
+variable "service_protocol" {
+  type    = string
+  default = null
+}
+
+variable "protocol" {
+  type    = string
+  default = "tcp"
+}
+
+variable "use_service_connect" {
+  type    = bool
+  default = false
+}
+
+variable "service_connect_name" {
+  type    = string
+  default = null
+}
+
+variable "service_connect_arn" {
+  type    = string
+  default = null
+}
+
+variable "use_lb" {
+  type        = bool
+  default     = true
+  description = "Enable the Load Balancer on the service"
 }

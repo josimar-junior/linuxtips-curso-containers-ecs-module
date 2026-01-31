@@ -1,3 +1,4 @@
 data "aws_lb" "arn" {
-  arn = var.alb_arn
+  count = var.use_lb ? 1 : 0
+  arn   = var.alb_arn
 }
