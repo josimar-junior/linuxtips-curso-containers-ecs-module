@@ -1,5 +1,5 @@
 resource "aws_alb_target_group" "main" {
-  count = var.use_lb ? 1 : 0
+  count = (var.use_lb && var.deployment_controller == "ECS") ? 1 : 0
   name  = format("%s-tg", var.cluster_name)
 
   port   = var.service_port
