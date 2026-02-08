@@ -23,7 +23,7 @@ resource "aws_cloudwatch_metric_alarm" "rollback_alarm" {
       metric_name = "RequestCount"
       namespace   = "AWS/ApplicationELB"
       period      = var.codedeploy_rollback_error_period
-      stat        = "SUM"
+      stat        = "Sum"
       unit        = "Count"
 
       dimensions = {
@@ -40,7 +40,7 @@ resource "aws_cloudwatch_metric_alarm" "rollback_alarm" {
       metric_name = "RequestCount"
       namespace   = "AWS/ApplicationELB"
       period      = var.codedeploy_rollback_error_period
-      stat        = "SUM"
+      stat        = "Sum"
       unit        = "Count"
 
       dimensions = {
@@ -57,7 +57,7 @@ resource "aws_cloudwatch_metric_alarm" "rollback_alarm" {
       metric_name = "HTTPCode_Target_5xx_Count"
       namespace   = "AWS/ApplicationELB"
       period      = var.codedeploy_rollback_error_period
-      stat        = "SUM"
+      stat        = "Sum"
       unit        = "Count"
 
       dimensions = {
@@ -74,7 +74,7 @@ resource "aws_cloudwatch_metric_alarm" "rollback_alarm" {
       metric_name = "HTTPCode_Target_5xx_Count"
       namespace   = "AWS/ApplicationELB"
       period      = var.codedeploy_rollback_error_period
-      stat        = "SUM"
+      stat        = "Sum"
       unit        = "Count"
 
       dimensions = {
