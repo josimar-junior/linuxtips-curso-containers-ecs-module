@@ -1,5 +1,5 @@
 resource "local_file" "appspec" {
-  count = var.deployment_controller == "ECS" ? 1 : 0
+  count = var.deployment_controller == "CODE_DEPLOY" ? 1 : 0
 
   filename = "${path.module}/${aws_codedeploy_app.main[count.index].name}.yml"
 
